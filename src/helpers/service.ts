@@ -39,15 +39,12 @@ const service = {
     },
 };
 
-export const checkAuthorHasBook = (
-    authorId: number,
-    isOwner?: boolean
-): boolean => {
+export const checkAuthorHasBook = (authorId: number): boolean => {
     const books = service.getAll("books");
     let hasBook = false;
 
     books.forEach((book) => {
-        if (book.author_id === authorId && !isOwner) {
+        if (book.author_id === authorId) {
             hasBook = true;
             return;
         }
