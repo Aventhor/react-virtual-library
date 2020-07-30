@@ -1,0 +1,32 @@
+.dataTable {
+    overflow: auto;
+    thead {
+        background-color: #ffffff;
+
+        th {
+            text-align: start;
+            padding: 0.5rem;
+            white-space: nowrap;
+        }
+    }
+
+    tbody {
+        tr {
+            background-color: #f3f3f3;
+        }
+        td {
+            white-space: nowrap;
+            padding: 0.3rem 0.5rem;
+        }
+    }
+}
+
+.dataTable_actionCell {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.dataTable_notFound {
+    padding: 1rem 0;
+    text-align: center;
+}

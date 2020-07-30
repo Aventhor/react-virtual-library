@@ -1,0 +1,36 @@
+@import "../scss/variables.scss";
+
+.navbar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #ffffff;
+    padding: 0.5rem 0;
+
+    .links {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        grid-column: 2;
+        padding: 0;
+
+        li {
+            padding: 0 1rem;
+            &:first {
+                padding-left: 0;
+            }
+            a {
+                color: $linkColor;
+                text-decoration: none;
+                transition: $transitionTime;
+                &:hover {
+                    color: $mainColorHover;
+                    transition: $transitionTime;
+                }
+            }
+            .activeLink {
+                color: $mainColorHover;
+                border-bottom: 0.1rem solid $mainColor;
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    form {
+        grid-column: 1;
+        @media screen and (max-width: 768px) {
+            grid-column: span 3;
+        }
+    }
+}
+
+input,
+select {
+    border: 0.1rem solid #ffffff;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    transition: $transitionTime;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    width: 100%;
+    &:focus {
+        border: 0.1rem solid $mainColor;
+        transition: $transitionTime;
+    }
+    ~ .error {
+        display: none;
+    }
+
+    &:required:valid {
+        border: 0.1rem solid $successColor;
+        & ~ .error {
+            display: none;
+        }
+    }
+}
+
+input:required:invalid:not(:placeholder-shown) {
+    border: 0.1rem solid $errorColor;
+    & ~ .error {
+        display: block;
+        font-size: 0.9em;
+        padding: 0.5rem;
+        color: $errorColor;
+    }
+}
+
+option {
+    border: 0.1rem solid #ffffff;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    transition: $transitionTime;
+    background-color: #ffffff;
+}
+
+.form-group {
+    padding: 0.5rem 0;
+
+    label {
+        display: block;
+        padding: 0.5rem;
+    }
+}
+
+.form-actions {
+    padding: 2rem 0;
+
+    button {
+        margin: 0 1rem;
+    }
+
+    button:first-child {
+        margin: 0;
+    }
+}
