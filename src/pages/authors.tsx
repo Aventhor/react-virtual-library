@@ -31,7 +31,7 @@ const AuthorsPage = ({ history, location }: RouteComponentProps) => {
     const handleDeleteAuthor = (author: Author) => {
         service.delete("authors", author.id);
         const book = findAuthorBook(author.id);
-        if (book) service.delete("books", author.id);
+        if (book) service.delete("books", book.id);
         loadData();
     };
 
